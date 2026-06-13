@@ -85,3 +85,7 @@ VALUES
 ('Database Systems', '9781234567890', 1, 1, 5, 5);
 
 SELECT * FROM Books;
+SELECT genre, COUNT(*) AS total_books, SUM(total_copies) AS absolute_copy_count
+FROM Books
+GROUP BY genre
+ORDER BY total_books DESC;
