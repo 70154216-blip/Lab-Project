@@ -87,6 +87,10 @@ INSERT INTO Books
 VALUES
 ('Database Systems', '9781234567890', 1, 1, 5, 5);
 
+INSERT INTO Fines (issue_id, fine_amount)
+VALUES (1, 100.00);
+SELECT * FROM Fines;
+
 UPDATE Books 
 SET available_copies = available_copies - 1 
 WHERE book_id = 1 AND available_copies > 0;
@@ -128,5 +132,6 @@ SELECT Student.Name, Book.Title
 FROM Issue
 JOIN Student ON Issue.StudentID = Student.StudentID
 JOIN Book ON Issue.BookID = Book.BookID;
+
 
 
