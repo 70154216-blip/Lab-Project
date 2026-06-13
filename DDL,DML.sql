@@ -37,7 +37,7 @@ CREATE TABLE Librarians (
 );
 
 CREATE TABLE Issued_Books (
-    issue_id INT PRIMARY KEY AUTO_INCREMENT,
+    issue_id INT PRIMARY KEY 
     book_id INT,
     member_id INT,
     issue_date DATE,
@@ -48,7 +48,7 @@ CREATE TABLE Issued_Books (
 );
 
 CREATE TABLE Fines (
-    fine_id INT PRIMARY KEY AUTO_INCREMENT,
+    fine_id INT PRIMARY KEY 
     issue_id INT,
     fine_amount DECIMAL(10,2),
     paid_status VARCHAR(20) DEFAULT 'Unpaid',
@@ -56,7 +56,7 @@ CREATE TABLE Fines (
 );
 
 CREATE TABLE Reservations (
-    reservation_id INT PRIMARY KEY AUTO_INCREMENT,
+    reservation_id INT PRIMARY KEY ,
     book_id INT,
     member_id INT,
     reservation_date DATE,
