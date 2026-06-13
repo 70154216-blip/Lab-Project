@@ -129,6 +129,14 @@ WHERE loan_id = 101;
 UPDATE Books
 SET available_copies = available_copies + 1 WHERE book_id = 1;
 
+SELECT COUNT(*) AS total_books
+FROM Books;
+
+SELECT title, available_copies
+FROM Books
+WHERE available_copies > 0;
+
+
 SELECT genre, COUNT(*) AS total_books, SUM(total_copies) AS absolute_copy_count
 FROM Books
 GROUP BY genre
@@ -140,8 +148,12 @@ LEFT JOIN Issued_Books i
 ON b.book_id = i.book_id
 GROUP BY b.book_id;
 
-
+SELECT m.name, b.title, r.reservation_date, r.status
+FROM Reservations r
+JOIN Members m ON r.member_id = m.member_id
+JOIN Books b ON r.book_id = b.book_id;
 SELECT m.name, b.title, i.due_date
+    
 FROM Issued_Books
 JOIN Members m ON i.member_id = m.member_id
 JOIN Books b ON i.book_id = b.book_id
