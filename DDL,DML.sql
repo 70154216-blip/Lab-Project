@@ -79,6 +79,9 @@ VALUES ('Unknown Author');
 INSERT INTO Categories(category_name)
 VALUES ('General');
 
+INSERT INTO Loans (book_id, member_id, due_date)
+VALUES (1, 5, DATE_ADD(CURRENT_DATE, INTERVAL 14 DAY));
+
 INSERT INTO Books
 (title, isbn, author_id, category_id, total_copies, available_copies)
 VALUES
