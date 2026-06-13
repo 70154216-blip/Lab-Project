@@ -122,7 +122,7 @@ GROUP BY b.book_id;
 
 
 SELECT m.name, b.title, i.due_date
-FROM Issued_Books i
+FROM Issue
 JOIN Members m ON i.member_id = m.member_id
 JOIN Books b ON i.book_id = b.book_id
 WHERE i.return_date IS NULL
