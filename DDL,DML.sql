@@ -103,3 +103,8 @@ JOIN Members m ON i.member_id = m.member_id
 JOIN Books b ON i.book_id = b.book_id
 WHERE i.return_date IS NULL
 AND i.due_date < CURDATE();
+
+SELECT Student.Name, Book.Title
+FROM Issue
+JOIN Student ON Issue.StudentID = Student.StudentID
+JOIN Book ON Issue.BookID = Book.BookID;
