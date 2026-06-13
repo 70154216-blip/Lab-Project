@@ -95,3 +95,11 @@ FROM Books b
 LEFT JOIN Issued_Books i
 ON b.book_id = i.book_id
 GROUP BY b.book_id;
+
+SELECT * FROM Books;
+SELECT m.name, b.title, i.due_date
+FROM Issued_Books i
+JOIN Members m ON i.member_id = m.member_id
+JOIN Books b ON i.book_id = b.book_id
+WHERE i.return_date IS NULL
+AND i.due_date < CURDATE();
