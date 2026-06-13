@@ -87,6 +87,9 @@ INSERT INTO Books
 VALUES
 ('Database Systems', '9781234567890', 1, 1, 5, 5);
 
+INSERT INTO Notifications (member_id, message, notification_date)
+VALUES (1, 'Your book is due tomorrow.', CURDATE());
+
 INSERT INTO Fines (issue_id, fine_amount)
 VALUES (1, 100.00);
 SELECT * FROM Fines;
