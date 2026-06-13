@@ -87,6 +87,17 @@ INSERT INTO Books
 VALUES
 ('Database Systems', '9781234567890', 1, 1, 5, 5);
 
+UPDATE Books 
+SET available_copies = available_copies - 1 
+WHERE book_id = 1 AND available_copies > 0;
+
+DELETE FROM Members WHERE member_id = 12;
+WHERE member_id = 1;
+
+UPDATE Members 
+SET phone_number = '555-9999' 
+WHERE member_id = 1;
+
 SELECT * FROM Books;
 SELECT genre, COUNT(*) AS total_books, SUM(total_copies) AS absolute_copy_count
 FROM Books
@@ -112,5 +123,4 @@ FROM Issue
 JOIN Student ON Issue.StudentID = Student.StudentID
 JOIN Book ON Issue.BookID = Book.BookID;
 
-DELETE FROM Members WHERE member_id = 12;
-WHERE member_id = 1;
+
