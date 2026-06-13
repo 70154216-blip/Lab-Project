@@ -89,3 +89,9 @@ SELECT genre, COUNT(*) AS total_books, SUM(total_copies) AS absolute_copy_count
 FROM Books
 GROUP BY genre
 ORDER BY total_books DESC;
+
+SELECT b.title, COUNT(i.issue_id) AS times_issued
+FROM Books b
+LEFT JOIN Issued_Books i
+ON b.book_id = i.book_id
+GROUP BY b.book_id;
