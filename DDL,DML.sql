@@ -98,6 +98,13 @@ UPDATE Members
 SET phone_number = '555-9999' 
 WHERE member_id = 1;
 
+UPDATE Loans 
+SET return_date = CURRENT_DATE 
+WHERE loan_id = 101;
+
+UPDATE Books
+SET available_copies = available_copies + 1 WHERE book_id = 1;
+
 SELECT * FROM Books;
 SELECT genre, COUNT(*) AS total_books, SUM(total_copies) AS absolute_copy_count
 FROM Books
