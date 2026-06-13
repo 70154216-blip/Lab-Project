@@ -1,6 +1,6 @@
 
 CREATE TABLE Members (
-    member_id INT PRIMARY KEY 
+    member_id INT PRIMARY KEY ,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE,
     phone VARCHAR(20),
@@ -9,17 +9,17 @@ CREATE TABLE Members (
 );
 
 CREATE TABLE Authors (
-    author_id INT PRIMARY KEY 
+    author_id INT PRIMARY KEY ,
     author_name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Categories (
-    category_id INT PRIMARY KEY 
+    category_id INT PRIMARY KEY ,
     category_name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Books (
-    book_id INT PRIMARY KEY 
+    book_id INT PRIMARY KEY, 
     title VARCHAR(200) NOT NULL,
     isbn VARCHAR(20) UNIQUE,
     author_id INT,
@@ -31,13 +31,13 @@ CREATE TABLE Books (
 );
 
 CREATE TABLE Librarians (
-    librarian_id INT PRIMARY KEY 
+    librarian_id INT PRIMARY KEY, 
     username VARCHAR(50) UNIQUE,
     password VARCHAR(100)
 );
 
 CREATE TABLE Issued_Books (
-    issue_id INT PRIMARY KEY 
+    issue_id INT PRIMARY KEY, 
     book_id INT,
     member_id INT,
     issue_date DATE,
@@ -48,7 +48,7 @@ CREATE TABLE Issued_Books (
 );
 
 CREATE TABLE Fines (
-    fine_id INT PRIMARY KEY 
+    fine_id INT PRIMARY KEY, 
     issue_id INT,
     fine_amount DECIMAL(10,2),
     paid_status VARCHAR(20) DEFAULT 'Unpaid',
@@ -67,7 +67,7 @@ CREATE TABLE Reservations (
 
 
 CREATE TABLE Notifications (
-    notification_id INT PRIMARY KEY AUTO_INCREMENT,
+    notification_id INT PRIMARY KEY,
     member_id INT,
     message VARCHAR(255),
     notification_date DATE,
