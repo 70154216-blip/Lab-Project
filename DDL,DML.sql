@@ -73,6 +73,16 @@ CREATE TABLE Notifications (
     notification_date DATE,
     FOREIGN KEY (member_id) REFERENCES Members(member_id)
 );
+CREATE TABLE Loans (
+    loan_id INT PRIMARY KEY AUTO_INCREMENT,
+    book_id INT,
+    member_id INT,
+    issue_date DATE DEFAULT CURRENT_DATE,
+    due_date DATE,
+    return_date DATE,
+    FOREIGN KEY (book_id) REFERENCES Books(book_id),
+    FOREIGN KEY (member_id) REFERENCES Members(member_id)
+);
 INSERT INTO Authors(author_name)
 VALUES ('Unknown Author');
 
