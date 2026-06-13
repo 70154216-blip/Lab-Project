@@ -92,6 +92,13 @@ VALUES (1, 'Your book is due tomorrow.', CURDATE());
 
 INSERT INTO Fines (issue_id, fine_amount)
 VALUES (1, 100.00);
+
+SELECT * FROM Fines;
+SELECT * FROM Authors;
+SELECT * FROM Categories;
+SELECT * FROM Members;
+SELECT * FROM Books;
+SELECT * FROM Issued_Books;
 SELECT * FROM Fines;
 
 UPDATE Books 
