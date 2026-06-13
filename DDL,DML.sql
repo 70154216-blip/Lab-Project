@@ -74,7 +74,7 @@ CREATE TABLE Notifications (
     FOREIGN KEY (member_id) REFERENCES Members(member_id)
 );
 CREATE TABLE Loans (
-    loan_id INT PRIMARY KEY AUTO_INCREMENT,
+    loan_id INT PRIMARY KEY,
     book_id INT,
     member_id INT,
     issue_date DATE DEFAULT CURRENT_DATE,
