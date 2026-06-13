@@ -1,6 +1,6 @@
 
 CREATE TABLE Members (
-    member_id INT PRIMARY KEY AUTO_INCREMENT,
+    member_id INT PRIMARY KEY 
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE,
     phone VARCHAR(20),
@@ -9,17 +9,17 @@ CREATE TABLE Members (
 );
 
 CREATE TABLE Authors (
-    author_id INT PRIMARY KEY AUTO_INCREMENT,
+    author_id INT PRIMARY KEY 
     author_name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Categories (
-    category_id INT PRIMARY KEY AUTO_INCREMENT,
+    category_id INT PRIMARY KEY 
     category_name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Books (
-    book_id INT PRIMARY KEY AUTO_INCREMENT,
+    book_id INT PRIMARY KEY 
     title VARCHAR(200) NOT NULL,
     isbn VARCHAR(20) UNIQUE,
     author_id INT,
@@ -31,7 +31,7 @@ CREATE TABLE Books (
 );
 
 CREATE TABLE Librarians (
-    librarian_id INT PRIMARY KEY AUTO_INCREMENT,
+    librarian_id INT PRIMARY KEY 
     username VARCHAR(50) UNIQUE,
     password VARCHAR(100)
 );
@@ -111,3 +111,6 @@ SELECT Student.Name, Book.Title
 FROM Issue
 JOIN Student ON Issue.StudentID = Student.StudentID
 JOIN Book ON Issue.BookID = Book.BookID;
+
+DELETE FROM Members WHERE member_id = 12;
+WHERE member_id = 1;
